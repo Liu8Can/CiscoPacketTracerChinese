@@ -6,7 +6,6 @@
 
 ---
 
-## 🛡️ 动态 Shield 图标
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/Version-8.2.2-brightgreen)](https://github.com/Liu8Can/CiscoPacketTracerChinese)
