@@ -33,7 +33,7 @@
 ## 🛠️ 使用方法
 
 ### 1. **下载汉化包**
-   - 从 [Release 页面](https://github.com/Liu8Can/CiscoPacketTracerChinese/releases) 下载 `Chinese-canglang-8.2.2.ptl` 文件。
+   - 从 [Release 页面](https://github.com/Liu8Can/CiscoPacketTracerChinese/releases) 或项目文件中下载 `Chinese-canglang-8.2.2.ptl` 文件。【后续如有更新，请选择与你版本所对应的汉化包】
 
 ### 2. **安装汉化包**
    - 找到你的 Cisco Packet Tracer 安装目录下的 `languages` 文件夹。  
