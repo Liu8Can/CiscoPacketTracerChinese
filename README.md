@@ -17,7 +17,7 @@
 
 ## 📜 项目简介
 
-**CiscoPacketTracerChinese** 是一个高质量的 Cisco Packet Tracer 汉化包，适用于 **8.2.2 版本**。通过使用智谱清言的 **glm-4-plus 大模型** 进行翻译，并结合后期人工矫正，达到了前所未有的汉化质量。
+**CiscoPacketTracerChinese** 是一个高质量的 Cisco Packet Tracer 汉化包，适用于 **8.2.2 版本**。通过使用智谱清言的 **glm-4-plus 大模型** 进行翻译，并结合后期人工矫正，达到了前所未有的汉化质量。全文翻译一次大概需要80万token左右，请为我添加星标支持一下😄
 
 ---
 
