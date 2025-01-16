@@ -1,11 +1,10 @@
 # 🚀 CiscoPacketTracerChinese
 
-![Project Logo](https://img.icons8.com/color/96/000000/translation.png)  
-**高质量的思科模拟器汉化包**  
+![Project Logo](https://img.icons8.com/color/96/000000/translation.png)
+**高质量的思科模拟器汉化包**
 *让 Cisco Packet Tracer 更贴近中文用户！*
 
 ---
-
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/Version-8.2.2-brightgreen)](https://github.com/Liu8Can/CiscoPacketTracerChinese)
@@ -32,47 +31,52 @@
 ## 🛠️ 使用方法
 
 ### 1. **下载汉化包**
-   - 从 [Release 页面](https://github.com/Liu8Can/CiscoPacketTracerChinese/releases) 或项目文件中下载 `Chinese-canglang-8.2.2.ptl` 文件。【后续如有更新，请选择与你版本所对应的汉化包】
+
+- 从 [Release 页面](https://github.com/Liu8Can/CiscoPacketTracerChinese/releases) 或项目文件中下载 `Chinese-canglang-8.2.2.ptl` 文件。【后续如有更新，请选择与你版本所对应的汉化包】
 
 ### 2. **安装汉化包**
-   - 找到你的 Cisco Packet Tracer 安装目录下的 `languages` 文件夹。  
-     **例如：**：  
-     ```
-     D:\Program Files\Cisco Packet Tracer 8.2.2\languages
-     ```
-   - 将 `Chinese-canglang-8.2.2.ptl` 文件拖入 `languages` 文件夹。
+
+- 找到你的 Cisco Packet Tracer 安装目录下的 `languages` 文件夹。**例如：**：
+  ```
+  D:\Program Files\Cisco Packet Tracer 8.2.2\languages
+  ```
+- 将 `Chinese-canglang-8.2.2.ptl` 文件拖入 `languages` 文件夹。
 
 ### 3. **启用汉化**
-   - 打开 Cisco Packet Tracer。
-   - 依次点击：  
-     ```
-     Options → Preferences → Interface
-     ```
-   - 在语言选项中选择 `chinese-canglang-8.2.2.ptl`。
-   - 点击 **Change Language**，然后重启软件。
+
+- 打开 Cisco Packet Tracer。
+- 依次点击：
+  ```
+  Options → Preferences → Interface
+  ```
+- 在语言选项中选择 `chinese-canglang-8.2.2.ptl`。
+- 点击 **Change Language**，然后重启软件。
 
 ### 4. 禁用登录和联网功能
 
 - 不登录不联网对恩科模拟器的使用没有影响
-- 下载本项目中的`BanNetwork.bat`文件双击运行即可。本文件提供了开启和关闭恩科模拟器防火墙两种功能，你可按照自己的需求进行选择。双击后，该脚本会默认以管理员身份运行，你只需要点击同意即可。同时，若你修改了恩科模拟器的安装位置，你需要手动输入`PacketTracer.exe`文件的安装路径。
-- **请注意，在手动输入路径时不要带双引号，不然会报错**
+- 下载本项目中的 `BanNetwork.bat`文件双击运行即可。本文件提供了开启和关闭恩科模拟器防火墙两种功能，你可按照自己的需求进行选择。双击后，该脚本会默认以管理员身份运行，你只需要点击同意即可。同时，若你修改了恩科模拟器的安装位置，你需要手动输入 `PacketTracer.exe`文件的安装路径。
+
 ---
 
 ## 🧩 项目背景
 
 ### 1. **为什么做这个汉化包？**
-   - 我在学习网络拓扑时需要使用 Cisco Packet Tracer，但是互联网上并没有让我找到质量比较满意的汉化语言包。
-   - 为了让更多中文用户能够更方便地使用这款软件，我决定制作这个汉化包。
+
+- 我在学习网络拓扑时需要使用 Cisco Packet Tracer，但是互联网上并没有让我找到质量比较满意的汉化语言包。
+- 为了让更多中文用户能够更方便地使用这款软件，我决定制作这个汉化包。
 
 ### 2. **翻译质量如何？**
-   - 使用 **智谱清言的 glm-4-plus 大模型** 进行初步翻译。
-   - 结合后期人工矫正，确保翻译结果准确、自然。
-   - 这是市面上翻译质量最高的汉化包之一。
+
+- 使用 **智谱清言的 glm-4-plus 大模型** 进行初步翻译。
+- 结合后期人工矫正，确保翻译结果准确、自然。
+- 这是市面上翻译质量最高的汉化包之一。
 
 ### 3. **后续更新**
-   - 由于我可能不再频繁使用 Cisco Packet Tracer，后续更新需要大家的支持。
-   - 如果你需要更新汉化包，请在 Issue 中提交请求，并将最新的 `template.ts` 或 `default.ts` 文件发给我。
-   - 我会在一周内完成更新。
+
+- 由于我可能不再频繁使用 Cisco Packet Tracer，后续更新需要大家的支持。
+- 如果你需要更新汉化包，请在 Issue 中提交请求，并将最新的 `template.ts` 或 `default.ts` 文件发给我。
+- 我会在一周内完成更新。
 
 ---
 
