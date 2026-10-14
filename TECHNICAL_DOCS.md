@@ -86,6 +86,14 @@ Cisco Packet Tracer 采用 **Qt 6 C++ 框架** 构建界面。其官方国际化
 - **这是官方源码级代码硬编码遗漏**，属于国际化设计瑕疵。
 - **最佳实践**：作为正规无损语言包，应当**保持现状**。不建议为了几个悬浮词条而采用注入外挂 DLL 或挂钩内存代码的高风险方案。
 
+### 3.4 线缆与设备底部描述栏（Copper Straight-Through 等）汉化失效原因与完美解决
+在 8.2.2 中，鼠标悬停在线缆图标上方时，底部状态栏会显示“铜直通线”、“铜交叉线”等中文，但在 9.0.1 原版语言包中却显示为英文 `Copper Straight-Through`。
+- **逆向分析**：
+  通过跟踪底部标签设置调用点（地址 `0x1424e5a0c`），我们发现 9.0.1 将描述栏重构进了 `CDeviceSpecificBox` 类，并调用 `CDeviceSpecificBox::tr(cableName)`。
+  但官方提供的 `template.ts` 存在断层：所有线缆名称仅存在于 `CNetworkComponentBox`，而 `CDeviceSpecificBox` 下完全没有线缆词条，导致 Qt 查询失败回退为英文。
+- **修复方案**：
+  我们通过多上下文跨作用域注入，将全套线缆（直通线、交叉线、光纤、同轴、串口 DCE/DTE、八目线等）及全部终端/IoT设备名称，同步补全到了 `CDeviceSpecificBox`、`CDeviceButton` 与 `CTranslationDB` 中，**彻底恢复了底部描述栏的 100% 完整中文显示**！
+
 ---
 
 ## 4. 9.0.1 原生免登录补丁（Patcher）深度逆向
