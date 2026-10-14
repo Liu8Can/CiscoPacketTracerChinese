@@ -17,6 +17,8 @@
 ## 📺 [视频教程 - 点击前往 B 站观看 ✋](https://www.bilibili.com/video/BV1HocieeE6N)
 > 视频内有详细的安装与配置演示，欢迎三连支持！
 
+🔬 **底层原理与逆向解析白皮书**：[TECHNICAL_DOCS.md](TECHNICAL_DOCS.md)（深入揭秘为什么悬停提示是英文、9.0.1 二进制跳转修补原理等技术细节）
+
 ---
 
 ## 📜 项目简介
