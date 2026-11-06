@@ -94,6 +94,42 @@ Cisco Packet Tracer 采用 **Qt 6 C++ 框架** 构建界面。其官方国际化
 - **修复方案**：
   我们通过多上下文跨作用域注入，将全套线缆（直通线、交叉线、光纤、同轴、串口 DCE/DTE、八目线等）及全部终端/IoT设备名称，同步补全到了 `CDeviceSpecificBox`、`CDeviceButton` 与 `CTranslationDB` 中，**彻底恢复了底部描述栏的 100% 完整中文显示**！
 
+### 3.5 颜色名被误翻导致 Preferences 颜色面板失效（终端背景与文字全黑）
+
+**现象描述**：
+应用汉化包后，`选项 → 首选项 → 颜色` 面板中，Router IOS 与 PC Console 的背景/文字颜色无法调整。无论点击哪一个色块，终端始终呈现纯黑，输入输出不可见；移除语言包恢复英文后一切正常。
+
+**成因分析**：
+`AdministrativeOptionsBase.ui` 中，4 组颜色项（Router IOS Text / Router IOS Background / PC Console Text / PC Console Background）各自附带 10 个预设色块按钮，其 `text` 属性直接就是颜色名本身：
+
+```text
+Black  White  Red  Green  Blue  Yellow  Orange  Magenta  Violet  Pink
+```
+
+Packet Tracer 在色块点击回调中直接用按钮文本构造 `QColor`。而 `QColor` 只识别英文 SVG 颜色名与 `#RRGGBB` 形式，传入「黑色」「白色」这类译文时返回 **invalid QColor**，绘制阶段一律按 `#000000` 输出。于是前景与背景同时被压成纯黑，且点击任何色块结果都相同，表现为“颜色根本改不动”。
+
+这与 3.1 中 `Smart City` 被当作 `m_vDTValues` 检索键属于同类陷阱：**控件文本在此处承担的是数据语义，而非展示语义**。
+
+**修复方案**：
+将这 10 条词条在语言包中置为未翻译（`.ts` 中标记 `type="unfinished"`），使其回退到英文原文。色块按钮本身不绘制文字，界面观感无任何变化，但 `QColor` 解析恢复正常。
+
+本次修复不重建文件结构：在 `.ptl`（Qt QM 二进制）层面，把这 10 条 message 的 translation tag `0x03` 改写为 obsolete tag `0x04`，Qt 解析时按长度跳过该字段，从而回退 source 原文。文件字节数保持一致，所有偏移与索引均不受影响，不会破坏语言包的完整性。
+
+**验证方式**：
+
+```python
+from PySide6.QtCore import QTranslator, QCoreApplication
+
+app = QCoreApplication([])
+t = QTranslator()
+t.load("哔哩哔哩 沧浪同学 中文汉化包.ptl")
+print(t.translate("CAdministrativeOptionsBase", "Black"))
+# 修复前 → '黑色'（QColor 无法解析，渲染为纯黑）
+# 修复后 → ''（未翻译，Qt 回退 source 'Black'）
+```
+
+**适用范围**：9.0.1 与 8.2.2 两个语言包均存在该问题，本次已同步修复。
+
 ---
 
 ## 4. 9.0.1 原生免登录补丁（Patcher）深度逆向
