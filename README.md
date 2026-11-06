@@ -39,6 +39,17 @@
 
 ---
 
+## 📝 更新日志 (Changelog)
+
+- **2026-11-06 (v9.0.1 / v8.2.2 体验优化与关键缺陷修复)**：
+  - 🎨 **修复首选项颜色面板失效缺陷**：彻底解决进入 `选项 → 首选项 → 颜色` 面板后 Router IOS 与 PC Console 终端背景与文字全黑、内容不可见、色块按键无法切换颜色的问题。（感谢贡献者 [@3399185897](https://github.com/3399185897) 提交 [PR #6](https://github.com/Liu8Can/CiscoPacketTracerChinese/pull/6) 精准修复！）
+  - 📦 9.0.1 与 8.2.2 双版本 `.ptl` 语言包已同步应用修复。
+- **2026-10-14 (通用补丁与全套线缆汉化)**：
+  - ⚡️ **集成跨版本通用免登录工具**：上线 `PacketTracer_通用特征码自寻址补丁工具.bat`，毫秒级 AOB 动态重算跳转，跨版本自适应。
+  - 🔌 **修复 9.0.1 底部线缆与设备描述脱落**：建立多上下文跨作用域兜底，覆盖铜直通线、交叉线、光纤、同轴等全部线材与设备名。
+
+---
+
 ## 🛠️ 文件说明与下载
 
 从 [Releases 页面](https://github.com/Liu8Can/CiscoPacketTracerChinese/releases) 下载所需文件：
@@ -108,6 +119,16 @@
 
 - 如果你在使用过程中发现任何翻译不妥或遗漏之处，欢迎提交 [Issue](https://github.com/Liu8Can/CiscoPacketTracerChinese/issues) 或 Pull Request。
 - 后续如 Cisco 发布更高版本（如 9.0.2 / 9.1 等），只需在 Issue 中提供新版 `languages/template.ts` 或 `default.ts` 文件，我将在收到后更新适配。
+
+---
+
+## 💖 致谢与贡献者 (Contributors)
+
+特别鸣谢以下优秀开发者对本项目做出的核心贡献：
+
+- **[@3399185897 (Canelé)](https://github.com/3399185897)**：深度逆向定位并提交 [PR #6](https://github.com/Liu8Can/CiscoPacketTracerChinese/pull/6)，完美修复首选项颜色面板由于控件文本数据语义误翻导致的终端全黑失效问题，并撰写了精炼严谨的底层原理解析文档。
+
+欢迎更多社区小伙伴共同参与维护，让 Packet Tracer 汉化更加完美！
 
 ---
 
